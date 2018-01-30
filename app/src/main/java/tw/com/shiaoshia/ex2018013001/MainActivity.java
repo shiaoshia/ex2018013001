@@ -78,6 +78,12 @@ class MyListener implements LocationListener {
     @Override   //座位改變時
     public void onLocationChanged(Location location) {
         Log.d("LOC","Change!!" + location.getLatitude() + "," + location.getLongitude());
+        //計算距離
+        Location loc101 = new Location("LOC");
+        loc101.setLatitude(205.0336);
+        loc101.setLongitude(121.5646);
+        float dist = location.distanceTo(loc101);
+        Log.d("LOC","Dist:" + dist);
     }
 
     @Override
